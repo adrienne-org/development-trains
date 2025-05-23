@@ -1,0 +1,14 @@
+name: Hello World on Push to master
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  say-hello:
+    if: github.run_number != 1
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Hello World
+        run: echo "Hello World"
